@@ -11,7 +11,7 @@ function parsePartCode(productCode) {
         supplierCode: suppCode,
         productNumber: prodNum,
         size: sizeCode
-    }
+    };
     return code;
 }
 
