@@ -15,9 +15,7 @@ function getAverage(_scores){
 
 function getMedian(_scores){
     _scores.sort(function(a,b){
-        if (a < b) return -1;
-        else if (a == b) return 0;
-        else return 1;
+        return a - b;
     });
     let middle = Math.floor((_scores.length - 1) / 2);
     if(_scores.length % 2 == 0){
@@ -30,9 +28,7 @@ function getMedian(_scores){
 
 function getHignAndLow(_scores){
     _scores.sort(function(a,b){
-        if (a < b) return -1;
-        else if (a == b) return 0;
-        else return 1;
+        return a - b;
     });
     let lowest = _scores[0];
     let highest = _scores[_scores.length-1];
