@@ -43,38 +43,42 @@ let courses = [
 function getCourseStart(_courses, _courseID){
     for(let i = 0; i < _courses.length; i++){
         if(_courses[i].CourseId == _courseID){
-            console.log(_courses[i].StartDate);
+            return _courses[i].StartDate;
         }
     }
 }
-getCourseStart(courses, "PROG200");
+console.log(getCourseStart(courses, "PROG200"));
 
 // What is the title of the PROJ500 course?
 function getCourseTitle(_courses, _courseID){
     for(let i = 0; i < _courses.length; i++){
         if(_courses[i].CourseId == _courseID){
-            console.log(_courses[i].Title);
+            return _courses[i].Title;
         }
     }
 }
-getCourseTitle(courses, "PROJ500");
+console.log(getCourseTitle(courses, "PROJ500"));
 
 // What are the titles of the courses that cost $50 or less?
-function getCourse50(_courses){
+function getCourse50(_courses, _price){
+    let matching = [];
     for(let i = 0; i < _courses.length; i++){
-        if(Number(_courses[i].Fee) <= 50){
-            console.log(_courses[i].Title);
+        if(Number(_courses[i].Fee) <= _price){
+           matching.push(_courses[i].Title);
         }
     }
+    return matching;
 }
-getCourse50(courses);
+console.log(getCourse50(courses, 50));
 
 // What classes meet in "Classroom 1"?
 function getCourseByLocation(_courses, _location){
+    let matching = [];
     for(let i = 0; i < _courses.length; i++){
         if(_courses[i].Location == _location){
-            console.log(_courses[i].Title);
+            matching.push(_courses[i].Title);
         }
     }
+    return matching;
 }
-getCourseByLocation(courses, "Classroom 1");
+console.log(getCourseByLocation(courses, "Classroom 1"));

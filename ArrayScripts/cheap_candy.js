@@ -18,30 +18,35 @@ let products = [
 
 // Which candies costs less than $4.00?
 function getCandy4(_products, price){
+    let matching = [];
     for(let i = 0; i < _products.length; i++){
         if(Number(_products[i].price < price)){
-            console.log(_products[i].product);
+            matching.push(_products[i].product);
         }
     }
+    return matching;
 }
-getCandy4(products, 4.00);
+console.log(getCandy4(products, 4.00));
 
 // Which candies has "M&M" its name?
 function getCandyName(_products, candyName){
+    let matching = [];
     for(let i = 0; i < _products.length; i++){
         if(_products[i].product.indexOf(candyName) > -1){
-            console.log(_products[i].product);
+            matching.push(_products[i].product);
         }
     }
+    return matching;
 }
-getCandyName(products, "M&M");
+console.log(getCandyName(products, "M&M"));
 
 // Do we carry "Swedish Fish"?
 function checkIfCarry(_products, candyName){
     for(let i = 0; i < _products.length; i++){
         if(_products[i].product == candyName){
-            console.log(`Yes, we carry ${_products[i].product}`);
+            return `Yes, we carry ${_products[i].product}`;
         }
     }
+    return `No, we don't have ${candyName}`
 }
-checkIfCarry(products, "Swedish Fish");
+console.log(checkIfCarry(products, "Swedish Fish"));
