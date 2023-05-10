@@ -67,15 +67,12 @@ function searchMemberByMovie(_members, _movieName){
     for(let i = 0; i < _members.length; i++){
         let filmList = _members[i].films;
         for(let index = 0; index < filmList.length; index++){
-            if(filmList[index].indexOf[_movieName] > -1){
-                console.log("true");
-            }else{
-                console.log("false");
+            if(filmList[index].indexOf(_movieName) > -1){
+                matching.push(_members[i].name);
+                break;
             }
         }
     }
-
+    return matching;
 }
-// console.log(searchMemberByMovie(academyMembers, "A"));
-
-searchMemberByMovie(academyMembers, "A");
+console.log(searchMemberByMovie(academyMembers, "A"));
